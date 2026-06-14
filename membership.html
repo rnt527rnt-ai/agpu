@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>加盟条件 | AGPU Alliance</title>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1C3557;
+      --navy-light: #2A4D7A;
+      --sky: #4A90D9;
+      --sky-light: #EAF4FF;
+      --white: #FFFFFF;
+      --bg: #F8FAFD;
+      --text: #2D3E55;
+      --muted: #7A8FA6;
+      --border: #D8E6F3;
+    }
+    body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; font-weight: 300; }
+    header { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; box-shadow: 0 2px 12px rgba(28,53,87,0.06); }
+    .header-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; height: 68px; gap: 0.75rem; }
+    .logo-mark { width: 40px; height: 40px; }
+    .logo-text { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); letter-spacing: 0.05em; }
+    .logo-text span { color: var(--sky); }
+    .hero { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%); padding: 4rem 2rem 3.5rem; text-align: center; }
+    .hero-eyebrow { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.22em; color: var(--sky); text-transform: uppercase; margin-bottom: 0.9rem; }
+    .hero h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 1rem; }
+    .hero-sub { color: rgba(255,255,255,0.6); font-size: 0.95rem; font-weight: 300; max-width: 520px; margin: 0 auto 2rem; }
+    .badge-nopii { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(74,144,217,0.18); border: 1.5px solid rgba(74,144,217,0.5); border-radius: 999px; padding: 0.45rem 1.2rem; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 0.85rem; font-weight: 500; color: #A8D4FF; }
+    main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .notice-card { background: var(--sky-light); border: 1px solid #B8D8F5; border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 3rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .notice-card svg { flex-shrink: 0; margin-top: 3px; }
+    .notice-card p { font-size: 0.88rem; color: #1C3A5E; line-height: 1.7; font-weight: 400; }
+    .notice-card strong { font-weight: 700; }
+    .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .req-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem; }
+    .req-item { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: box-shadow 0.2s; }
+    .req-item:hover { box-shadow: 0 4px 16px rgba(74,144,217,0.1); }
+    .req-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+    .req-body h3 { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 0.97rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .req-body p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+    .req-badge { margin-left: auto; flex-shrink: 0; font-size: 0.65rem; font-weight: 700; font-family: 'M PLUS Rounded 1c', sans-serif; letter-spacing: 0.08em; padding: 0.25rem 0.7rem; border-radius: 999px; background: #EDF4FF; color: var(--sky); border: 1px solid #B8D8F5; align-self: flex-start; }
+    .req-badge.required { background: #FFF3E0; color: #D07A00; border-color: #FFD08A; }
+    .steps { list-style: none; margin-bottom: 3rem; position: relative; padding-left: 1.5rem; }
+    .steps::before { content: ''; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 2px; background: var(--border); }
+    .step { display: flex; gap: 1.25rem; align-items: flex-start; padding-bottom: 1.5rem; position: relative; }
+    .step:last-child { padding-bottom: 0; }
+    .step-num { width: 38px; height: 38px; border-radius: 50%; background: var(--white); border: 2px solid var(--sky); color: var(--sky); font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
+    .step-body { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; flex: 1; }
+    .step-body h3 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 0.93rem; color: var(--navy); margin-bottom: 0.3rem; }
+    .step-body p { font-size: 0.855rem; color: var(--muted); font-weight: 300; }
+    .bottom-notice { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 2rem; text-align: center; }
+    .bottom-notice h2 { font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+    .bottom-notice p { font-size: 0.875rem; color: var(--muted); font-weight: 300; margin-bottom: 0.5rem; }
+    .nopii-note { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--sky); font-weight: 500; font-family: 'M PLUS Rounded 1c', sans-serif; margin-top: 0.5rem; }
+    footer { text-align: center; padding: 2rem; font-size: 0.78rem; color: var(--muted); font-weight: 300; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="20" fill="#EAF4FF"/>
+      <path d="M8 22L20 10L32 22L28 22L24 18L24 30L20 30L20 18L16 18L16 22L8 22Z" fill="#4A90D9"/>
+    </svg>
+    <span class="logo-text">AGPU <span>Alliance</span></span>
+  </div>
+</header>
+
+<section class="hero">
+  <p class="hero-eyebrow">Membership Criteria</p>
+  <h1>AGPU Alliance<br>加盟条件</h1>
+  <p class="hero-sub">加盟をご検討の航空会社さまへ。必要な要件と手続きをわかりやすくご案内します。</p>
+  <div class="badge-nopii">
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+      <circle cx="7.5" cy="7.5" r="6.5" stroke="#A8D4FF" stroke-width="1.5"/>
+      <path d="M4.5 7.5L6.5 9.5L10.5 5.5" stroke="#A8D4FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    個人情報の提出は一切不要です
+  </div>
+</section>
+
+<main>
+  <div class="notice-card">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <circle cx="10" cy="10" r="9" stroke="#4A90D9" stroke-width="1.5"/>
+      <path d="M10 9V14" stroke="#4A90D9" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="10" cy="6.5" r="0.8" fill="#4A90D9"/>
+    </svg>
+    <p><strong>個人情報について：</strong>AGPU Alliance の加盟審査では、申請者個人の氏名・住所・連絡先などの個人情報は一切収集しません。すべての審査は航空会社・法人単位の情報のみを対象としています。</p>
+  </div>
+
+  <h2 class="section-title">✈️ 基本加盟要件</h2>
+  <div class="req-list">
+    <div class="req-item">
+      <span class="req-icon">🛫</span>
+      <div class="req-body">
+        <h3>定期国際線の運航実績</h3>
+        <p>申請時点で、2カ国以上への定期国際旅客便を継続的に運航していること。</p>
+      </div>
+      <span class="req-badge required">必須</span>
+    </div>
+    <div class="req-item">
+      <span class="req-icon">🛡️</span>
+      <div class="req-body">
+        <h3>安全認証（IOSA）の保持</h3>
+        <p>IATA Operational Safety Audit（IOSA）の有効な認証を取得・維持していること。未取得の場合は申請前に完了が必要です。</p>
+      </div>
+      <span class="req-badge required">必須</span>
+    </div>
+    <div class="req-item">
+      <span class="req-icon">📋</span>
+      <div class="req-body">
+        <h3>航空当局からの認可</h3>
+        <p>本国の航空当局から有効な航空運送事業許可証を保持し、重大な行政処分歴がないこと。</p>
+      </div>
+      <span class="req-badge required">必須</span>
+    </div>
+    <div class="req-item">
+      <span class="req-icon">🌐</span>
+      <div class="req-body">
+        <h3>コードシェア対応</h3>
+        <p>既存の加盟航空会社とのコードシェア協定を締結できる技術的・契約的な環境を整備していること。</p>
+      </div>
+      <span class="req-badge required">必須</span>
+    </div>
+    <div class="req-item">
+      <span class="req-icon">✈️</span>
+      <div class="req-body">
+        <h3>機材・路線の規模</h3>
+        <p>運航機材20機以上、または年間旅客数200万人以上が目安です。規模が下回る場合も個別審査の対象となります。</p>
+      </div>
+      <span class="req-badge">目安</span>
+    </div>
+    <div class="req-item">
+      <span class="req-icon">💼</span>
+      <div class="req-body">
+        <h3>財務の健全性</h3>
+        <p>直近2期分の監査済み財務諸表を提出し、継続企業の前提に重大な疑義がないことが確認できること。</p>
+      </div>
+      <span class="req-badge required">必須</span>
+    </div>
+  </div>
+
+  <h2 class="section-title">📝 申請の流れ</h2>
+  <ul class="steps">
+    <li class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>事前照会（任意）</h3>
+        <p>法人名・運航規模の概要をお伝えいただくだけで、加盟可能性を非公式にご確認いただけます。個人情報は不要です。</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>申請書類の提出</h3>
+        <p>加盟申請書（法人情報のみ）・IOSA証明書・直近2期の財務諸表・運航路線図をご提出ください。</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>書類審査（約30日）</h3>
+        <p>審査委員会が提出書類をもとに一次審査を実施。必要に応じて追加資料をお願いする場合があります。</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>現地審査・ヒアリング</h3>
+        <p>一次審査通過後、審査員が拠点・整備施設を訪問し、オペレーション品質・サービス水準を確認します。</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>理事会による最終承認</h3>
+        <p>全加盟航空会社の代表で構成する理事会にて、出席者の3分の2以上の賛成をもって加盟が承認されます。</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <h3>加盟契約締結・移行期間</h3>
+        <p>承認後90日以内に加盟協定書に調印し、システム統合・マイレージ連携などの移行作業を開始します。</p>
+      </div>
+    </li>
+  </ul>
+
+  <div class="bottom-notice">
+    <h2>加盟に関するお問い合わせ</h2>
+    <p>詳細なご確認や個別相談は、加盟推進窓口までお気軽にどうぞ。</p>
+    <p>航空会社・法人名義でのみ受け付けています。</p>
+    <div class="nopii-note">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <circle cx="7" cy="7" r="6" stroke="#4A90D9" stroke-width="1.5"/>
+        <path d="M4 7L6 9L10 5" stroke="#4A90D9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      個人情報の提出は一切不要です
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 AGPU Alliance. All rights reserved.<br>
+  <span style="font-size:0.85em;opacity:0.7">(架空です)</span>
+</footer>
+
+</body>
+</html>
